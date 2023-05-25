@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Nav from "y/components/home/Nav";
 import Hero from "y/components/home/Hero";
+import Feature from "y/components/home/feature";
 const Home: NextPage = () => {
 
   return (
@@ -12,9 +13,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className="m-auto h-screen w-full sm:container overflow-x-hidden">
+      <div className="m-auto h-full w-full sm:container overflow-x-hidden">
         <Nav />
         <Hero />
+        <Feature />
       </div>
     </>
   );
