@@ -1,5 +1,4 @@
 import { useTheme } from "y/contexts/useTheme";
-import { useEffect, useState } from "react";
 
 
 const colors = [
@@ -12,35 +11,10 @@ const colors = [
   { name: "orange", color: "bg-accent-orange" },
 ];
 
-const getInitialAccent = () => {
-  return localStorage.getItem("accent") ?? "blue";
-};
 
-const getInitialTheme = () => {
-  const savedTheme = localStorage.getItem("theme");
-  const perfersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  return savedTheme ?? (perfersDark ? "dark" : "light");
-};
 
 const ThemeSelector = () => {
-  const value = useTheme();
-  console.log(value);
-
-  const [theme, changeTheme] = useState<string>(getInitialTheme());
-  const [accent, setAccent] = useState<string>(getInitialAccent());
-
-  useEffect(() => {
-    const root = document.documentElement;
-
-    root.style.setProperty("--main-accent", `rgb(var(--accent-${accent}))`);
-    localStorage.setItem("accent", accent);
-
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  }, [theme, accent]);
+  const { theme, changeTheme, accent, setAccent } = useTheme();
 
   return (
     <div className="items-center gap-2 sm:flex">

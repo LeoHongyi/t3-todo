@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { api } from "y/utils/api";
 
 import "y/styles/globals.css";
+import { ThemeContextProvider } from "y/contexts/useTheme";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -13,9 +14,12 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <div className="h-full w-full bg-white dark:bg-black ">
-        <Component {...pageProps} />
-      </div>
+      <ThemeContextProvider>
+        <div className="h-full w-full bg-white dark:bg-black ">
+          <Component {...pageProps} />
+        </div>
+      </ThemeContextProvider>
+
       {process.env.NODE_ENV === "development" && (
         <ReactQueryDevtools initialIsOpen={false} />
       )}
