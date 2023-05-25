@@ -2,9 +2,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import Icon from "../../../public/icon.svg";
+import { NavVariants } from "y/utils/motion";
+import { motion } from "framer-motion";
+
 export default function Nav() {
   return (
-    <div className="flex h-24 items-center justify-between px-2 sm:px-28">
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      variants={NavVariants}
+      transition={{ duration: 1 }}
+      className="flex h-24 items-center justify-between px-2 sm:px-28">
       <div className="flex items-center gap-x-2">
         <Image src={Icon as string } alt="logo" />
         <span className="font-bold text-accent-red">Todo Daily</span>
@@ -15,6 +23,6 @@ export default function Nav() {
         </Link>
         <Link href="/">Signup</Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

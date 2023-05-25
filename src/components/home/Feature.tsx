@@ -1,11 +1,19 @@
-export default function Feature() {
+import { motion } from "framer-motion";
+
+const Feature = () => {
   return (
     <div>
       <div className="mt-5 py-5 text-center text-2xl font-bold dark:text-white">
         Don’t let your day doing nothing
       </div>
       <div className="sm:mb-26 mt-10 grid-cols-4 gap-x-4 px-28 sm:grid">
-        <div className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          whileHover={{ scale: 1.1 }}
+          className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2"
+        >
           <svg
             width="109"
             height="109"
@@ -18,9 +26,16 @@ export default function Feature() {
               className="fill-primary"
             />
           </svg>
-          <div className="text-center">Small task</div>
-        </div>
-        <div className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2">
+          <div className="text-center dark:text-white">Small task</div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          whileHover={{ scale: 1.1 }}
+          className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2"
+        >
           <svg
             width="109"
             height="109"
@@ -41,8 +56,15 @@ export default function Feature() {
             </defs>
           </svg>
           <div className="text-center dark:text-white">Write it</div>
-        </div>
-        <div className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2">
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          whileHover={{ scale: 1.1 }}
+          className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2"
+        >
           <svg
             width="109"
             height="109"
@@ -60,8 +82,15 @@ export default function Feature() {
             />
           </svg>
           <div className="text-center dark:text-white">Do it</div>
-        </div>
-        <div className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2">
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          whileHover={{ scale: 1.1 }}
+          className="grid grid-rows-2 place-content-center gap-y-1 sm:gap-y-2"
+        >
           <svg
             width="109"
             height="109"
@@ -75,8 +104,10 @@ export default function Feature() {
             />
           </svg>
           <div className="text-center dark:text-white">Repeat</div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
-}
+};
+
+export default Feature;
