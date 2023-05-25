@@ -3,6 +3,7 @@ import Head from "next/head";
 import Nav from "y/components/home/Nav";
 import Hero from "y/components/home/Hero";
 import Feature from "y/components/home/Feature";
+import Started from "y/components/home/Started";
 const Home: NextPage = () => {
 
   return (
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
         <Nav />
         <Hero />
         <Feature />
+        <Started />
       </div>
     </>
   );
