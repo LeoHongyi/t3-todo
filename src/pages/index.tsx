@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Nav from "y/components/home/Nav";
 import Hero from "y/components/home/Hero";
-import Feature from "y/components/home/feature";
+import Feature from "y/components/home/Feature";
 const Home: NextPage = () => {
 
   return (
