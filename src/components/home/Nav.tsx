@@ -4,7 +4,7 @@ import Image from "next/image";
 import Icon from "../../../public/icon.svg";
 export default function Nav() {
   return (
-    <div className="flex h-24 items-center justify-between px-28">
+    <div className="flex h-24 items-center justify-between px-2 sm:px-28">
       <div className="flex items-center gap-x-2">
         <Image src={Icon as string } alt="logo" />
         <span className="font-bold text-accent-red">Todo Daily</span>
