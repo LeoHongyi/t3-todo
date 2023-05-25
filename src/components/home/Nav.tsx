@@ -4,6 +4,11 @@ import Image from "next/image";
 import Icon from "../../../public/icon.svg";
 import { NavVariants } from "y/utils/motion";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const ThemeSelector = dynamic(() => import("y/components/ThemeSelector"), {
+  ssr: false,
+});
 
 export default function Nav() {
   return (
@@ -17,11 +22,12 @@ export default function Nav() {
         <Image src={Icon as string } alt="logo" />
         <span className="font-bold text-accent-red">Todo Daily</span>
       </div>
+      <ThemeSelector />
       <div className="space-x-5">
         <Link href="/" className="text-accent-red">
           Login
         </Link>
-        <Link href="/">Signup</Link>
+        <Link href="/" className="dark:text-white">Signup</Link>
       </div>
     </motion.div>
   );

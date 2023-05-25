@@ -5,6 +5,7 @@ import Hero from "y/components/home/Hero";
 import Feature from "y/components/home/Feature";
 import Started from "y/components/home/Started";
 import Footer from "y/components/home/Footer";
+import { useEffect } from "react";
 const Home: NextPage = () => {
 
   return (
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className="m-auto h-full w-full sm:container overflow-x-hidden">
+      <div className="m-auto overflow-hidden sm:container">
         <Nav />
         <Hero />
         <Feature />

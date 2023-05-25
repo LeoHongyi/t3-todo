@@ -11,8 +11,8 @@ export default function Hero() {
       <motion.p
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", type: "spring" }}
-        className="m-auto my-10 w-[400px] px-1.5 text-center text-3xl font-bold"
+        transition={{ duration: 1, type: "spring" }}
+        className="m-auto my-10 w-[400px] px-1.5 text-center text-3xl font-bold dark:text-white"
       >
         Organizing your day activity with Todo Daily
       </motion.p>

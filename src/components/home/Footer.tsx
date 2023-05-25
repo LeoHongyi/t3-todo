@@ -1,7 +1,11 @@
-
+import { motion } from "framer-motion";
+import { FooterVariants } from "y/utils/motion";
 export default function Footer() {
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      variants={FooterVariants}
       className="justify-between border-t border-primary pt-4 dark:text-white sm:mx-28 sm:flex"
     >
       <div className="flex flex-col items-center gap-y-6">
@@ -68,6 +72,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
