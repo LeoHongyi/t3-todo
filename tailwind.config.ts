@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "primary": "#FF4F5A",
         "accent-red": "#FF4F5A",
       },
     },
